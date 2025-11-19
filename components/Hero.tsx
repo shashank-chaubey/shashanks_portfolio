@@ -5,10 +5,10 @@ import { motion, useMotionValue, animate, useMotionTemplate } from "framer-motio
 import profilepic from "@/assets/profilepic.png"
 import obj1 from "@/assets/obj1.png"
 import Image from "next/image"
-import { FiLinkedin, FiArrowUpRight } from "react-icons/fi"
+import { FiLinkedin, FiArrowUpRight, FiGithub } from "react-icons/fi"
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"]
-const phrases = ["Shashank Chaubey", "A Tech Freak.", "A Day Debugger.", "A Night Dreamer." ,"A Gay"]
+const phrases = ["Shashank Chaubey", "A Tech Freak.", "A Day Debugger.", "A Night Dreamer."]
 
 export const Hero = () => {
     const color = useMotionValue(COLORS_TOP[0])
@@ -88,19 +88,35 @@ export const Hero = () => {
 
                 <p className="my-6 max-w-xl text-center">You can find me somewhere in Bengaluru.</p>
 
-                <motion.a
-                    href="https://www.linkedin.com/in/shashank-chaubey-a257352b7/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ border, boxShadow }}
-                    whileHover={{ scale: 1.015 }}
-                    whileTap={{ scale: 0.985 }}
-                    className="flex w-fit items-center gap-2 rounded-full px-4 py-2"
-                >
-                    <FiLinkedin />
-                    LinkedIn
-                    <FiArrowUpRight />
-                </motion.a>
+                {/* Social Buttons */}
+                <div className="flex gap-3">
+                    <motion.a
+                        href="https://www.linkedin.com/in/shashank-chaubey-a257352b7/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ border, boxShadow }}
+                        whileHover={{ scale: 1.015 }}
+                        whileTap={{ scale: 0.985 }}
+                        className="flex w-fit items-center gap-2 rounded-full px-4 py-2"
+                    >
+                        <FiLinkedin />
+                        LinkedIn
+                        <FiArrowUpRight />
+                    </motion.a>
+                    <motion.a
+                        href="https://github.com/sh4sh4nk-9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ border, boxShadow }}
+                        whileHover={{ scale: 1.015 }}
+                        whileTap={{ scale: 0.985 }}
+                        className="flex w-fit items-center gap-2 rounded-full px-4 py-2"
+                    >
+                        <FiGithub />
+                        GitHub
+                        <FiArrowUpRight />
+                    </motion.a>
+                </div>
             </div>
 
             <div className="bg-circle-container">
