@@ -104,7 +104,7 @@ export const Hero = () => {
                         <FiArrowUpRight />
                     </motion.a>
                     <motion.a
-                        href="https://github.com/sh4sh4nk-9"
+                        href="https://github.com/shashank-chaubey"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{ border, boxShadow }}
