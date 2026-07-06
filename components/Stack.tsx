@@ -16,18 +16,18 @@ const stackItems = [
 
 export const Stack = () => {
     return(
-      <section className="py-16 glass" id="stack">
-        <div className="max-w-[1200px] mx-auto px-4 text-center">
-            <h2 className="text-5xl text-gray-200 font-bold mb-4">My Stack</h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+      <section className="glass py-16 sm:py-20" id="stack">
+        <div className="mx-auto max-w-[1200px] px-4 text-center sm:px-6">
+            <h2 className="mb-8 text-4xl font-bold text-gray-200 sm:text-5xl">My Stack</h2>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4 lg:grid-cols-5">
                 {stackItems.map((item) => (
                   <div 
                     key={item.id}
-                    className="flex items-center justify-center flex-col rounded-xl p-4"
+                    className="flex min-w-0 flex-col items-center justify-center rounded-xl p-2 sm:p-4"
                     >
-                      <div className="mb-4 bg-white/10 p-6 rounded-xl">
+                      <div className="mb-3 rounded-xl bg-white/10 p-4 sm:mb-4 sm:p-5">
                           {React.createElement(item.icon, {
-                            className: "w-32 h-32",
+                            className: "h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24",
                             style: {color: item.color}
                           })}
                       </div>

@@ -40,19 +40,18 @@ export const KeyMetrics = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y:50 }}
         transition={{ duration:0.8 }}
-        className="px-4 py-32 text-white glass"
-        id="about"
+        className="glass mt-8 px-4 py-20 text-white sm:mt-10 sm:px-6 sm:py-24 lg:mt-12 lg:py-32"
     >
         <div className="container mx-auto">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y:0 } : { opacity:20, y:20 }}
                 transition={{ delay:0.2, duration: 0.6 }}
-                className="text-6xl font-bold mb-12"
+                className="mb-10 text-4xl font-bold sm:text-5xl lg:mb-12 lg:text-6xl"
             >
                 KEY METRICS
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {metrics.map((metric, index) => (
                     <motion.div
                         key={metric.id}
@@ -65,7 +64,7 @@ export const KeyMetrics = () => {
                         initial={{ scale: 0.5 }}
                         animate={isInView ? { scale:1 } : { scale: 0.5 }}
                         transition={{ delay:0.6 + index * 0.1, duration:0.4, type: 'spring'}}
-                        className="text-5xl font-bold text-purple-300 mb-2"
+                        className="mb-2 break-words text-3xl font-bold text-purple-300 sm:text-4xl lg:text-5xl"
                         >
                         {metric.value}
                     </motion.h3>
@@ -94,4 +93,3 @@ export const KeyMetrics = () => {
     </motion.section>
   )
 }
-
