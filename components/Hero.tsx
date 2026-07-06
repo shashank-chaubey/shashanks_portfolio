@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import profilepic from "@/assets/profilepic.png"
 import Image from "next/image"
@@ -54,7 +54,7 @@ export const Hero = () => {
 
                 <p className="text-3xl font-black leading-none text-white/40 sm:text-4xl lg:text-5xl">Hi, I am</p>
 
-                <h1 className="min-h-[2.75rem] max-w-3xl break-words bg-gradient-to-r from-white via-purple-100 to-purple-300 bg-clip-text text-4xl font-black leading-tight text-transparent sm:min-h-[4rem] sm:text-6xl lg:min-h-[4.75rem] lg:text-7xl">
+                <h1 className="min-h-[2.5rem] w-full max-w-3xl whitespace-nowrap bg-gradient-to-r from-white via-purple-100 to-purple-300 bg-clip-text text-[clamp(1.75rem,9vw,4.5rem)] font-black leading-tight tracking-tight text-transparent sm:min-h-[4rem]">
                     {displayText}
                     <span className="animate-pulse text-white">|</span>
                 </h1>

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -18,10 +18,14 @@ export const Contact = () => {
                 initial={{ opacity:0, x:-20 }}
                 whileInView={{ opacity:1, x:0 }}
                 transition={{ duration:0.6, delay:0.2 }}
-                className="text-4xl font-bold text-gray-300 sm:text-5xl md:text-7xl"
+                className="text-4xl font-black tracking-tight text-gray-200 sm:text-5xl md:text-7xl"
               >
-                Get in <span className="text-purple-500">touch</span>
+                Get in <span className="bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-transparent">touch</span>
               </motion.h2>
+
+              <p className="-mt-4 max-w-lg text-base leading-relaxed text-gray-400 sm:text-lg">
+                Have an idea, opportunity, or just want to talk technology? My inbox is always open.
+              </p>
 
               <motion.div
                 initial={{ opacity:0, x:-20 }}
@@ -33,10 +37,14 @@ export const Contact = () => {
                   <p className="text-lg text-purple-500">Phone</p>
                   <a
                     href="tel:+918837345053"
-                    className="flex items-center gap-2 text-lg font-semibold transition duration-300 hover:text-purple-400 sm:text-2xl"
+                    aria-label="Call Shashank at +91 8837345053"
+                    className="group flex items-center gap-3 rounded-xl border border-purple-300/20 bg-purple-300/[0.06] p-3 text-base font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-purple-300/50 hover:bg-purple-300/10 hover:text-purple-200 sm:p-4 sm:text-xl"
                   >
-                    +91 8837345053
-                    <span className="text-gray-500">↗</span>
+                    <span className="rounded-lg bg-purple-300/10 p-2 text-purple-300">
+                      <Phone className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0 flex-1">+91 7022093427</span>
+                    <ArrowUpRight className="h-5 w-5 text-purple-300 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
 
@@ -44,10 +52,14 @@ export const Contact = () => {
                   <p className="text-lg text-purple-500">Email</p>
                   <a
                     href="mailto:sashankchaubey2002@gmail.com"
-                    className="flex min-w-0 items-center gap-2 break-all text-base font-semibold transition duration-300 hover:text-purple-400 sm:text-xl lg:text-2xl"
+                    aria-label="Email Shashank at sashankchaubey2002@gmail.com"
+                    className="group flex min-w-0 items-center gap-3 rounded-xl border border-purple-300/20 bg-purple-300/[0.06] p-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 hover:border-purple-300/50 hover:bg-purple-300/10 hover:text-purple-200 sm:p-4 sm:text-lg"
                   >
-                    sashankchaubey2002@gmail.com
-                    <span className="text-gray-500">↗</span>
+                    <span className="shrink-0 rounded-lg bg-purple-300/10 p-2 text-purple-300">
+                      <Mail className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0 flex-1 break-all">sashankchaubey2002@gmail.com</span>
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-purple-300 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
 
@@ -55,15 +67,7 @@ export const Contact = () => {
                 <p className="text-lg text-purple-500 mb-2">Social</p>
                 <div className="flex gap-6 text-3xl text-white">
                   <a
-                    href="https://www.instagram.com/shashanktivity/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-purple-400 transition duration-300"
-                  >
-                    <Instagram />
-                  </a>
-                  <a
-                    href="https://github.com/sh4sh4nk-9"
+                    href="https://github.com/shashank-chaubey"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-purple-400 transition duration-300"
@@ -82,13 +86,11 @@ export const Contact = () => {
               </div>
 
                 <div className="space-y-2">
-                  <p className="text-lg text-purple-500">College</p>
-                  <address className="text-base not-italic leading-relaxed sm:text-xl">
-                    CDSIMER, Dayananda Sagar University<br/>
-                    DEVARAKAGGALAHALLI, HAROHALLI<br/>
-                    Kanakpura Main Rd<br/>
-                    Bengaluru, Karnataka
-                  </address>
+                  <p className="flex items-center gap-2 text-lg text-purple-400">
+                    <MapPin className="h-5 w-5" />
+                    Location
+                  </p>
+                  <p className="text-base font-semibold text-gray-200 sm:text-xl">Bangalore, India</p>
                 </div>
               </motion.div>
             </div>
@@ -100,7 +102,8 @@ export const Contact = () => {
               className="h-[320px] w-full overflow-hidden rounded-2xl sm:h-[400px] lg:h-full lg:min-h-[500px]"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18871.024989474085!2d77.43663145676635!3d12.65501096392183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae439988d9a405%3A0x9a4892007871393f!2zRHIgQ2hhbmRyYW1tYSBEYXlhbmFuZGEgU2FnYXIgaW5zdGl0dXRlIG9mIE1lZGljYWwgRWR1Y2F0aW9uIGFuZCBSZXNlYXJjaCDgsrjgsr8u4LKh4LK_LuCyuOCziOCyruCysOCzjSBDRFNJTUVS!5e1!3m2!1sen!2sin!4v1747646522461!5m2!1sen!2sin"
+                src="https://www.google.com/maps?q=Bangalore,India&output=embed"
+                title="Map showing Bangalore, India"
                 width="100%"
                 height="100%"
                 style={{ border:0 }}

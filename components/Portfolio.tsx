@@ -1,7 +1,6 @@
 "use client"
 
-import Image from 'next/image'
-import type { StaticImageData } from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import project1 from "@/assets/project1.png"
 import tableau1 from "@/assets/tableau1.png"
 import tableau2 from "@/assets/tableau2.png"
