@@ -8,8 +8,8 @@ const navLinks = [
     { title: "About", path: "#about" },
     { title: "Projects", path: "#projects" },
     { title: "Stack", path: "#stack" },
-    { title: "Contact", path:"#contact" },
-      { title: "Upcoming", path: "#upcoming" },
+    { title: "Upcoming", path: "#upcoming" },
+    { title: "Contact", path:"#contact" }
 ];
 export const Navbar = () => {
     const [nav, setNav] = useState(false);
