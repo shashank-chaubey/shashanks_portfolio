@@ -85,17 +85,17 @@ export const Portfolio = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.08 }}
         transition={{ duration: 0.6 }}
-        className="relative overflow-hidden py-20 text-white sm:py-24 lg:py-32"
+        className="relative overflow-hidden border-t border-[#f4f1e8]/10 py-20 text-[#f4f1e8] sm:py-24 lg:py-32"
     >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(168,85,247,0.12),transparent_28%),radial-gradient(circle_at_85%_80%,rgba(126,34,206,0.09),transparent_25%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_5%,rgba(216,255,99,0.07),transparent_28%),radial-gradient(circle_at_85%_80%,rgba(244,241,232,0.045),transparent_25%)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="mb-10 max-w-2xl sm:mb-14">
-                <p className="mb-3 bg-gradient-to-r from-purple-200 to-purple-500 bg-clip-text text-sm font-black uppercase tracking-[0.3em] text-transparent">Selected work</p>
+                <p className="mb-3 text-sm font-black uppercase tracking-[0.3em] text-[#d8ff63]">Selected work</p>
                 <h2 className="text-4xl font-black leading-none tracking-tight sm:text-5xl lg:text-6xl">
-                    My <span className="bg-gradient-to-r from-white/40 to-purple-300 bg-clip-text text-transparent">Projects</span>
+                    Projects built with data, code, and curiosity.
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-gray-400 sm:text-lg">
+                <p className="mt-4 text-base leading-relaxed text-[#a6aaa0] sm:text-lg">
                     A collection of dashboards, data stories, and applications built to turn ideas and information into useful experiences.
                 </p>
             </div>
@@ -104,8 +104,8 @@ export const Portfolio = () => {
                 {categories.map((category) => (
                     <div key={category}>
                         <div className="mb-6 flex items-center gap-4">
-                            <h3 className="shrink-0 text-xl font-black tracking-tight text-gray-100 sm:text-2xl">{category}</h3>
-                            <div className="h-px w-full bg-gradient-to-r from-purple-300/35 to-transparent" />
+                            <h3 className="shrink-0 text-xl font-black tracking-tight text-[#f4f1e8] sm:text-2xl">{category}</h3>
+                            <div className="h-px w-full bg-gradient-to-r from-[#d8ff63]/45 to-transparent" />
                         </div>
 
                         <div className="grid gap-5 md:grid-cols-2 lg:gap-7">
@@ -116,9 +116,9 @@ export const Portfolio = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.18 }}
                                     transition={{ duration: 0.5, delay: index * 0.06 }}
-                                    className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] transition duration-300 hover:-translate-y-1 hover:border-purple-300/35 hover:bg-white/[0.055]"
+                                    className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#f4f1e8]/12 bg-[#f4f1e8]/[0.035] transition duration-300 hover:-translate-y-1 hover:border-[#d8ff63]/55 hover:bg-[#f4f1e8]/[0.055]"
                                 >
-                                    <div className="relative aspect-[16/9] overflow-hidden bg-white/5">
+                                    <div className="relative aspect-[16/9] overflow-hidden bg-[#f4f1e8]/5">
                                         {project.image ? (
                                             <Image
                                                 src={project.image}
@@ -128,22 +128,22 @@ export const Portfolio = () => {
                                                 className="object-cover transition duration-500 group-hover:scale-[1.03]"
                                             />
                                         ) : project.id === 7 ? (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.2),transparent_58%)]">
-                                                <div className="relative flex h-28 w-40 items-center justify-center rounded-3xl border border-purple-300/20 bg-black/45 shadow-2xl sm:h-32 sm:w-48">
-                                                    <Video className="h-12 w-12 text-purple-300 sm:h-14 sm:w-14" />
-                                                    <span className="absolute -left-4 -top-4 rounded-xl border border-white/10 bg-zinc-900 p-2.5 text-purple-300 shadow-xl">
+                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(216,255,99,0.16),transparent_58%)]">
+                                                <div className="relative flex h-28 w-40 items-center justify-center rounded-2xl border border-[#d8ff63]/25 bg-[#0b0d0a]/70 shadow-2xl sm:h-32 sm:w-48">
+                                                    <Video className="h-12 w-12 text-[#d8ff63] sm:h-14 sm:w-14" />
+                                                    <span className="absolute -left-4 -top-4 rounded-xl border border-[#f4f1e8]/10 bg-[#11140f] p-2.5 text-[#d8ff63] shadow-xl">
                                                         <Bot className="h-5 w-5" />
                                                     </span>
-                                                    <span className="absolute -bottom-4 -right-4 rounded-xl bg-purple-300 p-2.5 text-black shadow-xl">
+                                                    <span className="absolute -bottom-4 -right-4 rounded-xl bg-[#d8ff63] p-2.5 text-[#0b0d0a] shadow-xl">
                                                         <MessageSquare className="h-5 w-5" />
                                                     </span>
                                                 </div>
                                             </div>
                                         ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(239,68,68,0.18),transparent_55%)]">
-                                                <div className="relative flex h-28 w-28 items-center justify-center rounded-3xl border border-white/10 bg-black/40 shadow-2xl sm:h-32 sm:w-32">
+                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(216,255,99,0.12),transparent_55%)]">
+                                                <div className="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-[#f4f1e8]/10 bg-[#0b0d0a]/60 shadow-2xl sm:h-32 sm:w-32">
                                                     <Youtube className="h-14 w-14 text-red-500 sm:h-16 sm:w-16" />
-                                                    <span className="absolute -bottom-3 -right-3 rounded-xl bg-purple-300 p-2.5 text-black shadow-xl">
+                                                    <span className="absolute -bottom-3 -right-3 rounded-xl bg-[#d8ff63] p-2.5 text-[#0b0d0a] shadow-xl">
                                                         <ArrowUpDown className="h-5 w-5" />
                                                     </span>
                                                 </div>
@@ -153,17 +153,17 @@ export const Portfolio = () => {
                                     </div>
 
                                     <div className="flex flex-1 flex-col p-5 sm:p-7">
-                                        <h4 className="bg-gradient-to-r from-white via-gray-100 to-purple-200 bg-clip-text text-xl font-black leading-snug tracking-tight text-transparent sm:text-2xl">
+                                        <h4 className="text-xl font-black leading-snug tracking-tight text-[#f4f1e8] sm:text-2xl">
                                             {project.title}
                                         </h4>
-                                        <p className="mt-3 text-sm font-medium leading-7 text-gray-400 sm:text-base">
+                                        <p className="mt-3 text-sm font-medium leading-7 text-[#a6aaa0] sm:text-base">
                                             {project.description}
                                         </p>
                                         <a
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-purple-300/35 bg-purple-300/10 px-4 py-3 text-sm font-bold text-purple-200 transition hover:bg-purple-300 hover:text-black sm:w-fit sm:rounded-full sm:px-5"
+                                            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#f4f1e8]/15 bg-[#f4f1e8]/5 px-4 py-3 text-sm font-bold text-[#f4f1e8] transition hover:border-[#d8ff63] hover:bg-[#d8ff63] hover:text-[#0b0d0a] sm:w-fit sm:px-5"
                                         >
                                             View project
                                             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
