@@ -1,22 +1,19 @@
-import { Contact } from "@/components/Contact";
 import { Hero } from "@/components/Hero";
-import { KeyMetrics } from "@/components/KeyMetrics";
 import { Navbar } from "@/components/Navbar";
 import { Portfolio } from "@/components/Portfolio";
 import { Stack } from "@/components/Stack";
-import { UpcomingProject } from "@/components/UpcomingProject";
 
 
 export default function Home() {
   return (
-    <>
+    <div className="site-layout">
       <Navbar />
-      <Hero />
-      <Portfolio />
-      <Stack />
-      <KeyMetrics />
-      <UpcomingProject />
-      <Contact />
-    </>
+      <main className="main-content">
+        <Hero />
+        <Portfolio />
+        <Stack />
+        <footer className="site-footer">© {new Date().getFullYear()} Shashank Chaubey</footer>
+      </main>
+    </div>
   );
 }

@@ -1,181 +1,33 @@
-"use client"
+import Image, { type StaticImageData } from "next/image";
+import project1 from "@/assets/project1.png";
+import tableau1 from "@/assets/tableau1.png";
+import tableau2 from "@/assets/tableau2.png";
+import tableau3 from "@/assets/tableau3.png";
+import RProject1 from "@/assets/RProject1.png";
 
-import Image, { type StaticImageData } from 'next/image'
-import project1 from "@/assets/project1.png"
-import tableau1 from "@/assets/tableau1.png"
-import tableau2 from "@/assets/tableau2.png"
-import tableau3 from "@/assets/tableau3.png"
-import RProject1 from "@/assets/RProject1.png"
-import { motion } from 'framer-motion'
-import { ArrowUpDown, ArrowUpRight, Bot, MessageSquare, Video, Youtube } from 'lucide-react'
-
-type Project = {
-    id: number
-    category: string
-    title: string
-    description: string
-    image?: StaticImageData
-    link: string
-}
-
+type Project = { category: string; title: string; description: string; image?: StaticImageData; link: string; technologies?: string };
 const projects: Project[] = [
-    { 
-        id:1, 
-        category: 'Data Analytics',
-        title: 'Ecommerce Year-to-Date (YTD) sales analysis using Tableau', 
-        description: 'This visualization provides key insights into business performance, including total sales and profit, order volumes, category-wise sales distribution, and monthly customer acquisition trends across various markets.', 
-        image: tableau1,
-        link: 'https://public.tableau.com/app/profile/shashank.chaubey4310/viz/ECOMMERCEANALYSIS_17236946835530/Dashboard1'
-    },
-    { 
-        id:2, 
-        category: 'Data Analytics',
-        title: 'Data Science job market trends using Tableau', 
-        description: 'Global Data Science job trends by role, salary and location', 
-        image: tableau2,
-        link: 'https://public.tableau.com/app/profile/shashank.chaubey4310/viz/DataScienceJobMarketTrends/Dashboard1'
-    },
-    { 
-        id:3, 
-        category: 'Data Analytics',
-        title: 'Breaking Bad Episode Analytics in Tableau',
-        description: 'Comprehensive dashboard visualizing episode data, ratings, and viewership trends of Breaking Bad', 
-        image: tableau3,
-        link: 'https://public.tableau.com/app/profile/shashank.chaubey4310/viz/BreakingBad_17353206913580/Dashboard1'
-    },
-    { 
-        id:4, 
-        category: 'Next.js & Web',
-        title: 'AI content generator using Next.js', 
-        description: 'An AI tool that helps you supercharge your creativity by helping you to write, innovate and ideate like never before', 
-        image: project1,
-        link: 'https://github.com/sh4sh4nk-9/AI-content-generator'
-    },
-    {
-        id:5, 
-        category: 'Data Analytics',
-        title: 'Apple products Visualization in R', 
-        description: 'A dataset of 60+ apple products that Visualizes, Star Ratings by RAM, Sale Price and Top 15 Apple Products by Star Rating using R libraries like ggplot2 and dplyr.', 
-        image: RProject1,
-        link: 'https://www.linkedin.com/feed/update/urn:li:activity:7331397678754361345/'  
-    },
-    {
-        id:6,
-        category: 'Next.js & Web',
-        title: 'YouTube Sort Extension',
-        description: 'A browser extension created to make sorting YouTube content simpler and more convenient.',
-        link: 'https://github.com/shashank-chaubey/youtube_sort_extension'
-    },
-    {
-        id:7,
-        category: 'Next.js & Web',
-        title: 'ChatAI',
-        description: 'ChatAI is a full-stack platform for running video meetings with custom AI agents. Create an agent with its own instructions, start a recorded call, and receive a transcript and AI-generated summary when the meeting ends. You can then revisit the meeting and chat with the agent using the meeting context.',
-        link: 'https://github.com/shashank-chaubey/chatai'
-    }
-]
+  { category: "Web development", title: "AI content generator", description: "An AI tool designed to help people write, innovate, and develop ideas.", technologies: "Next.js", image: project1, link: "https://github.com/sh4sh4nk-9/AI-content-generator" },
+  { category: "Web development", title: "YouTube Sort Extension", description: "A browser extension created to make sorting YouTube content simpler and more convenient.", link: "https://github.com/shashank-chaubey/youtube_sort_extension" },
+  { category: "Web development", title: "ChatAI", description: "A full-stack platform for video meetings with custom AI agents. Create an agent with its own instructions, run a recorded call, then revisit its transcript and AI-generated summary or chat with the agent using meeting context.", link: "https://github.com/shashank-chaubey/chatai" },
+  { category: "Data analytics", title: "Ecommerce year-to-date sales analysis", description: "A Tableau dashboard showing sales and profit, order volumes, category distribution, and monthly customer acquisition across markets.", technologies: "Tableau", image: tableau1, link: "https://public.tableau.com/app/profile/shashank.chaubey4310/viz/ECOMMERCEANALYSIS_17236946835530/Dashboard1" },
+  { category: "Data analytics", title: "Data science job market trends", description: "A global look at data science roles, salaries, and locations, built as an interactive Tableau dashboard.", technologies: "Tableau", image: tableau2, link: "https://public.tableau.com/app/profile/shashank.chaubey4310/viz/DataScienceJobMarketTrends/Dashboard1" },
+  { category: "Data analytics", title: "Breaking Bad episode analytics", description: "A dashboard visualizing episode data, ratings, and viewership trends from Breaking Bad.", technologies: "Tableau", image: tableau3, link: "https://public.tableau.com/app/profile/shashank.chaubey4310/viz/BreakingBad_17353206913580/Dashboard1" },
+  { category: "Data analytics", title: "Apple products visualization", description: "Explores a dataset of 60+ Apple products, including star ratings by RAM, sale prices, and the top 15 products by rating.", technologies: "R · ggplot2 · dplyr", image: RProject1, link: "https://www.linkedin.com/feed/update/urn:li:activity:7331397678754361345/" },
+];
 
-const categories = ['Data Analytics', 'Next.js & Web']
-
-export const Portfolio = () => {
-  return (
-    <motion.section 
-        id="projects" 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.08 }}
-        transition={{ duration: 0.6 }}
-        className="relative overflow-hidden border-t border-[#f4f1e8]/10 py-20 text-[#f4f1e8] sm:py-24 lg:py-32"
-    >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_5%,rgba(216,255,99,0.07),transparent_28%),radial-gradient(circle_at_85%_80%,rgba(244,241,232,0.045),transparent_25%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-            <div className="mb-10 max-w-2xl sm:mb-14">
-                <p className="mb-3 text-sm font-black uppercase tracking-[0.3em] text-[#d8ff63]">Selected work</p>
-                <h2 className="text-4xl font-black leading-none tracking-tight sm:text-5xl lg:text-6xl">
-                    Projects built with data, code, and curiosity.
-                </h2>
-                <p className="mt-4 text-base leading-relaxed text-[#a6aaa0] sm:text-lg">
-                    A collection of dashboards, data stories, and applications built to turn ideas and information into useful experiences.
-                </p>
-            </div>
-
-            <div className="space-y-16">
-                {categories.map((category) => (
-                    <div key={category}>
-                        <div className="mb-6 flex items-center gap-4">
-                            <h3 className="shrink-0 text-xl font-black tracking-tight text-[#f4f1e8] sm:text-2xl">{category}</h3>
-                            <div className="h-px w-full bg-gradient-to-r from-[#d8ff63]/45 to-transparent" />
-                        </div>
-
-                        <div className="grid gap-5 md:grid-cols-2 lg:gap-7">
-                            {projects.filter((project) => project.category === category).map((project, index) => (
-                                <motion.article
-                                    key={project.id}
-                                    initial={{ opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, amount: 0.18 }}
-                                    transition={{ duration: 0.5, delay: index * 0.06 }}
-                                    className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#f4f1e8]/12 bg-[#f4f1e8]/[0.035] transition duration-300 hover:-translate-y-1 hover:border-[#d8ff63]/55 hover:bg-[#f4f1e8]/[0.055]"
-                                >
-                                    <div className="relative aspect-[16/9] overflow-hidden bg-[#f4f1e8]/5">
-                                        {project.image ? (
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                sizes="(max-width: 768px) 100vw, 50vw"
-                                                className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                                            />
-                                        ) : project.id === 7 ? (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(216,255,99,0.16),transparent_58%)]">
-                                                <div className="relative flex h-28 w-40 items-center justify-center rounded-2xl border border-[#d8ff63]/25 bg-[#0b0d0a]/70 shadow-2xl sm:h-32 sm:w-48">
-                                                    <Video className="h-12 w-12 text-[#d8ff63] sm:h-14 sm:w-14" />
-                                                    <span className="absolute -left-4 -top-4 rounded-xl border border-[#f4f1e8]/10 bg-[#11140f] p-2.5 text-[#d8ff63] shadow-xl">
-                                                        <Bot className="h-5 w-5" />
-                                                    </span>
-                                                    <span className="absolute -bottom-4 -right-4 rounded-xl bg-[#d8ff63] p-2.5 text-[#0b0d0a] shadow-xl">
-                                                        <MessageSquare className="h-5 w-5" />
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_center,rgba(216,255,99,0.12),transparent_55%)]">
-                                                <div className="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-[#f4f1e8]/10 bg-[#0b0d0a]/60 shadow-2xl sm:h-32 sm:w-32">
-                                                    <Youtube className="h-14 w-14 text-red-500 sm:h-16 sm:w-16" />
-                                                    <span className="absolute -bottom-3 -right-3 rounded-xl bg-[#d8ff63] p-2.5 text-[#0b0d0a] shadow-xl">
-                                                        <ArrowUpDown className="h-5 w-5" />
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
-                                    </div>
-
-                                    <div className="flex flex-1 flex-col p-5 sm:p-7">
-                                        <h4 className="text-xl font-black leading-snug tracking-tight text-[#f4f1e8] sm:text-2xl">
-                                            {project.title}
-                                        </h4>
-                                        <p className="mt-3 text-sm font-medium leading-7 text-[#a6aaa0] sm:text-base">
-                                            {project.description}
-                                        </p>
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#f4f1e8]/15 bg-[#f4f1e8]/5 px-4 py-3 text-sm font-bold text-[#f4f1e8] transition hover:border-[#d8ff63] hover:bg-[#d8ff63] hover:text-[#0b0d0a] sm:w-fit sm:px-5"
-                                        >
-                                            View project
-                                            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                        </a>
-                                    </div>
-                                </motion.article>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    </motion.section>
-  )
-}
+export const Portfolio = () => (
+  <section id="projects" className="page-section projects-section">
+    <div className="section-heading"><h2><span aria-hidden="true">👨🏻‍💻</span> Projects</h2><p>Data stories and applications built with curiosity.</p></div>
+    <div className="project-grid">
+      {projects.map((project) => (
+        <article className="project-card" key={project.title}>
+          {project.image ? <Image className="project-image" src={project.image} alt={`${project.title} preview`} sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" /> : <div className="project-image project-placeholder" aria-hidden="true">{project.title === "ChatAI" ? "◉" : "↕"}</div>}
+          <div className="project-copy"><p className="project-category">{project.category}</p><h3>{project.title}</h3><p>{project.description}</p>{project.technologies && <p className="project-tech">{project.technologies}</p>}</div>
+          <a className="text-link project-link" href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title}`}>View project <span aria-hidden="true">↗</span></a>
+        </article>
+      ))}
+    </div>
+    <article className="upcoming-project"><div><p className="project-category">In development</p><h3>Code Monitor</h3><p>A smarter workspace for reviewing code and monitoring repositories through the GitHub API.</p><ul><li>Automated code reviews</li><li>GitHub API monitoring</li><li>Repository insights</li></ul></div><a className="text-link" href="https://github.com/shashank-chaubey/codereviewer" target="_blank" rel="noopener noreferrer">Follow the build <span aria-hidden="true">↗</span></a></article>
+  </section>
+);
