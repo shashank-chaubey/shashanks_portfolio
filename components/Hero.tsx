@@ -13,7 +13,7 @@ export const Hero = () => (
           <li><span className="timeline-date">2025–present</span><span><strong>AI Voice &amp; Video Meeting Platform:</strong> developing secure meetings with protected routes, role-based access, recordings, transcription, and AI transcript search.</span></li>
           <li><span className="timeline-date">Focus</span><span>React, Next.js, TypeScript, Node.js/Express, REST APIs, authentication, and database-driven features.</span></li>
         </ul>
-        <p className="chai-note"><span aria-hidden="true">☕</span> Good ideas tend to show up after a cup of masala chai and a little curiosity.</p>
+        <p className="chai-note"><span aria-hidden="true">☕</span> One cup of masala chai away from either a breakthrough or a breakdown.</p>
       </div>
       <figure className="profile-figure">
         <Image src="/profilepic.jpg" alt="Portrait of Shashank Chaubey" width={250} height={333} priority className="profile-image" />
