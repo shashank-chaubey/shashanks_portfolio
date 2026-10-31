@@ -28,6 +28,5 @@ export const Portfolio = () => (
         </article>
       ))}
     </div>
-    <article className="upcoming-project"><div><p className="project-category">In development</p><h3>Code Monitor</h3><p>A smarter workspace for reviewing code and monitoring repositories through the GitHub API.</p><ul><li>Automated code reviews</li><li>GitHub API monitoring</li><li>Repository insights</li></ul></div><a className="text-link" href="https://github.com/shashank-chaubey/codereviewer" target="_blank" rel="noopener noreferrer">Follow the build <span aria-hidden="true">↗</span></a></article>
   </section>
 );
