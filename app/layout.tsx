@@ -9,7 +9,6 @@ const poppins = localFont({
     { path: "../assets/fonts/Poppins-SemiBold.woff2", weight: "600", style: "normal" },
     { path: "../assets/fonts/Poppins-Bold.woff2", weight: "700", style: "normal" },
   ],
-  subsets: ["latin"],
   display: "swap",
 });
 
