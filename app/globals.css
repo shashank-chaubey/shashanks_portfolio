@@ -180,6 +180,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .timeline-date { font-size: .7rem; }
   .chai-note { font-size: .8rem; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  .projects-section .section-heading { flex-direction: column; align-items: flex-start; gap: .15rem; }
+  .projects-section .section-heading > p { font-size: .82rem; }
   .project-image { height: 92px; }
   .project-copy { padding-inline: .65rem; }
   .project-copy h3 { font-size: .88rem; }
