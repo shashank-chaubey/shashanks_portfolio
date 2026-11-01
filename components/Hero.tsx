@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HelloContact } from "@/components/HelloContact";
 
 export const Hero = () => (
   <section id="about" className="page-section about-section">
@@ -14,8 +15,9 @@ export const Hero = () => (
       </div>
       <figure className="profile-figure">
         <Image src="/profilepic.jpg" alt="Portrait of Shashank Chaubey" width={250} height={333} priority className="profile-image" />
-        <blockquote className="chai-note profile-quote">“One cup of masala chai away from either a breakthrough or a breakdown.”</blockquote>
+        <blockquote className="chai-note profile-quote">“One masala chai away from either a breakthrough or a breakdown.”</blockquote>
         <figcaption>Location · Bengaluru, India</figcaption>
+        <HelloContact />
       </figure>
     </div>
   </section>

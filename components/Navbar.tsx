@@ -4,10 +4,20 @@ import { useState } from "react";
 import { ThemeControls } from "@/components/ThemeControls";
 
 const navLinks = [
-  { title: "About me", path: "#about" },
-  { title: "Projects", path: "#projects" },
-  { title: "Tools", path: "#stack" },
+  { title: "About me", path: "#about", icon: "about" },
+  { title: "Projects", path: "#projects", icon: "projects" },
+  { title: "Tools", path: "#stack", icon: "tools" },
 ];
+
+const NavigationIcon = ({ name }: { name: string }) => {
+  if (name === "about") {
+    return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.7-3.4 3-5.2 7-5.2s6.3 1.8 7 5.2" /></svg>;
+  }
+  if (name === "projects") {
+    return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h7l2 2h9v10.7H3z" /><path d="M3 9h18" /></svg>;
+  }
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.2h-2.6v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H6.3v-2.6h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.2H15v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.2V14h-.2a1.7 1.7 0 0 0-1.5 1Z" /></svg>;
+};
 
 export const Navbar = () => (
   <NavbarContent />
@@ -17,10 +27,30 @@ const NavbarContent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-  <header className="sidebar">
+  <aside className="sidebar">
+    <div className="sidebar-profile">
+      <div className="sidebar-profile-heading">
+        <p className="sidebar-name">Shashank Chaubey</p>
+        <div className="desktop-theme"><ThemeControls /></div>
+      </div>
+      <div className="sidebar-intro-wrap">
+        <p className="sidebar-intro">A little about who I am, what I build, and what I’m curious about.</p>
+      </div>
+    </div>
+    <div className="navbar-actions">
+      <div className="mobile-theme"><ThemeControls /></div>
+    </div>
     <nav aria-label="Main navigation" className="sidebar-nav desktop-nav">
-      <ul>{navLinks.map((link) => <li key={link.path}><a href={link.path}>{link.title}</a></li>)}</ul>
+      <ul>{navLinks.map((link) => <li key={link.path}><a href={link.path}><NavigationIcon name={link.icon} /><span>{link.title}</span></a></li>)}</ul>
     </nav>
+    <div className="sidebar-socials" aria-label="Social profiles">
+      <a href="https://github.com/shashank-chaubey" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.2-6-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18.5 6a4.3 4.3 0 0 0-.1-3.2S17.4 2.5 15 4.1a13 13 0 0 0-6 0C6.6 2.5 5.6 2.8 5.6 2.8A4.3 4.3 0 0 0 5.5 6a4.7 4.7 0 0 0-1.2 3.3c0 4.7 2.8 5.7 5.5 6A3 3 0 0 0 9 17.5V21" /></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/shashank-chaubey-a257352b7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v11M5 5v.01M10 20v-6a4 4 0 0 1 8 0v6M10 10v10" /><circle cx="5" cy="5" r="1.5" /></svg>
+      </a>
+    </div>
     <div className="mobile-menu">
       <button className="mobile-menu-toggle" type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
         <span aria-hidden="true"><i /><i /><i /></span>
@@ -29,34 +59,6 @@ const NavbarContent = () => {
         <ul>{navLinks.map((link) => <li key={link.path}><a href={link.path} onClick={() => setMenuOpen(false)}>{link.title}</a></li>)}</ul>
       </nav>}
     </div>
-    <div className="navbar-actions">
-      <ThemeControls />
-      <details className="hello-contact">
-        <summary aria-label="Open social links">
-          <span className="hello-copy" aria-hidden="true">
-            <span>Say hi? 👋</span>
-            <span>Have a project in mind?</span>
-            <span>Amigos?</span>
-            <span>Click here</span>
-            <span>Let’s connect ✨</span>
-          </span>
-        </summary>
-        <div className="hello-options" aria-label="Choose a way to connect">
-          <a href="https://www.instagram.com/soy_shashank/" target="_blank" rel="noopener noreferrer" onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="1.8" /><circle cx="17.7" cy="6.6" r="1.1" /></svg>
-            <span>Instagram</span><span className="hello-option-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a href="https://www.linkedin.com/in/shashank-chaubey-a257352b7/" target="_blank" rel="noopener noreferrer" onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.6H2.4V21h2.8V8.6ZM3.8 2.5a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM21.6 13.9c0-3.7-2-5.5-4.7-5.5a4 4 0 0 0-3.6 2V8.6h-2.8V21h2.8v-6.1c0-1.6.3-3.2 2.4-3.2 2 0 2.1 1.9 2.1 3.3V21h2.8l1-7.1Z" /></svg>
-            <span>LinkedIn</span><span className="hello-option-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a href="https://wa.me/917022093427" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp at +91 70220 93427" onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2a9.6 9.6 0 0 0-8.2 14.6L2.5 21.5l4.8-1.3A9.6 9.6 0 1 0 12 2.2Zm0 17.3a7.7 7.7 0 0 1-3.9-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A7.7 7.7 0 1 1 12 19.5Zm4.2-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4.3-.4c.1-.2 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.4.5.2.9.3 1.2.4.5.2 1 .1 1.4.1.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z" /></svg>
-            <span>WhatsApp</span><span className="hello-option-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </details>
-    </div>
-  </header>
+  </aside>
   );
 };
