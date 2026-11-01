@@ -81,13 +81,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .main-content { width: min(1320px, 100%); margin: 0 auto; padding: 3.5rem clamp(2rem, 5.2vw, 5rem) 2rem; }
 .page-section { padding-block: 1.25rem 2.8rem; scroll-margin-top: 1.5rem; }
 .page-section + .page-section { border-top: 1px solid var(--line); padding-top: 2rem; }
-.about-section > h1 { margin: 0; font-size: clamp(2.35rem, 4vw, 3.25rem); font-weight: 700; letter-spacing: -.055em; line-height: 1.18; }
-.lead { margin: .55rem 0 1.2rem; color: var(--muted); font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.55; }
+.about-section > h1 { margin: 0; font-size: 3rem; font-weight: 700; letter-spacing: -.055em; line-height: 1.18; }
+.lead { margin: .55rem 0 1.2rem; color: var(--muted); font-size: 1.35rem; font-weight: 400; line-height: 1.55; }
 .intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) 235px; align-items: start; gap: 2rem; }
-.subheading { margin: 0 0 1.05rem; font-size: 1.35rem; font-weight: 600; letter-spacing: -.02em; }
+.subheading { margin: 0 0 1.05rem; font-size: 1.4rem; font-weight: 600; letter-spacing: -.02em; }
 .timeline { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
-.timeline li { display: grid; grid-template-columns: 105px minmax(0, 1fr); gap: .9rem; color: var(--foreground); font-size: .9rem; line-height: 1.65; }
-.timeline strong { color: var(--accent); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent), transparent 42%); text-decoration-thickness: .075em; text-underline-offset: .14em; }
+.timeline li { display: grid; grid-template-columns: 105px minmax(0, 1fr); gap: .9rem; color: var(--foreground); font-size: 1rem; font-weight: 400; line-height: 1.6; }
+.timeline strong { color: var(--accent); font-size: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent), transparent 42%); text-decoration-thickness: .075em; text-underline-offset: .14em; }
 .timeline-date { color: var(--subtle); font-size: .8rem; }
 .chai-note { display: flex; align-items: flex-start; gap: .65rem; margin: 1.1rem 0 0; padding: .7rem .85rem; border-left: 3px solid var(--accent); border-radius: 0 7px 7px 0; background: var(--soft-accent); color: var(--foreground); font-size: .88rem; font-weight: 500; line-height: 1.6; }
 .chai-note > span { flex: 0 0 auto; }
@@ -166,7 +166,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .main-content { width: min(100% - 2rem, 780px); padding: 1.5rem 0; }
   .page-section { padding-block: .7rem 1.8rem; }
   .page-section + .page-section { padding-top: 1.4rem; }
-  .about-section > h1 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .about-section > h1 { font-size: 2.25rem; }
   .lead { margin-bottom: 1.3rem; font-size: 1rem; }
   .intro-grid { grid-template-columns: minmax(0, 1fr) 110px; align-items: start; gap: .8rem; }
   .profile-figure { align-self: start; }
@@ -176,7 +176,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .profile-contact summary { width: 132px; min-height: 32px; font-size: .7rem; }
   .profile-contact .hello-options { width: 165px; }
   .timeline { gap: .7rem; }
-  .timeline li { grid-template-columns: 84px minmax(0, 1fr); gap: .45rem; font-size: .78rem; }
+  .timeline li { grid-template-columns: 84px minmax(0, 1fr); gap: .45rem; font-size: .86rem; }
   .timeline-date { font-size: .7rem; }
   .chai-note { font-size: .8rem; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
